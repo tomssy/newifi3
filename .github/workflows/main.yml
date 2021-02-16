@@ -6,6 +6,17 @@
 name: Build Newifi 3
 
 on: 
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
+      days:
+        description: 'Number of days.'
+        required: true
+        default: 7
   release:
     types: [published]
 #  push:
